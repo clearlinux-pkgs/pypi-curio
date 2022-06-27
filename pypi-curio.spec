@@ -4,7 +4,7 @@
 #
 Name     : pypi-curio
 Version  : 1.5
-Release  : 17
+Release  : 18
 URL      : https://files.pythonhosted.org/packages/bc/bc/2c438a1e8402a45b3f1a27abf45e3f280004c28d7bec6e2d1d8eb964a3cc/curio-1.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/bc/bc/2c438a1e8402a45b3f1a27abf45e3f280004c28d7bec6e2d1d8eb964a3cc/curio-1.5.tar.gz
 Summary  : Curio
@@ -57,7 +57,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1653055031
+export SOURCE_DATE_EPOCH=1656372573
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -95,7 +95,7 @@ export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
 python3 -tt setup.py build install --root=%{buildroot}-v3
 popd
-/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
