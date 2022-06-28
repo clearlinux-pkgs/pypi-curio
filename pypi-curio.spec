@@ -4,7 +4,7 @@
 #
 Name     : pypi-curio
 Version  : 1.5
-Release  : 18
+Release  : 19
 URL      : https://files.pythonhosted.org/packages/bc/bc/2c438a1e8402a45b3f1a27abf45e3f280004c28d7bec6e2d1d8eb964a3cc/curio-1.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/bc/bc/2c438a1e8402a45b3f1a27abf45e3f280004c28d7bec6e2d1d8eb964a3cc/curio-1.5.tar.gz
 Summary  : Curio
@@ -57,7 +57,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656372573
+export SOURCE_DATE_EPOCH=1656409103
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
