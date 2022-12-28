@@ -4,7 +4,7 @@
 #
 Name     : pypi-curio
 Version  : 1.6
-Release  : 25
+Release  : 26
 URL      : https://files.pythonhosted.org/packages/e9/d9/ed3d361fea04f3300eb69a23d97aa1be003c9dab0e5b10244fef0ad2c1ba/curio-1.6.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e9/d9/ed3d361fea04f3300eb69a23d97aa1be003c9dab0e5b10244fef0ad2c1ba/curio-1.6.tar.gz
 Summary  : Curio
@@ -14,6 +14,9 @@ Requires: pypi-curio-license = %{version}-%{release}
 Requires: pypi-curio-python = %{version}-%{release}
 Requires: pypi-curio-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 Curio
@@ -64,15 +67,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1666740167
+export SOURCE_DATE_EPOCH=1672266120
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
